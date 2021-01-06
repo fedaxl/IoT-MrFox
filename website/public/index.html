@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>RaspberryPI3+ Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="public/assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<nav class="left">
+							<!-- Menu -->
+					<a href="index.html">Home</a> | 
+					<a href="#one">Tools</a> | 
+					<a href="#two">Technologies</a> | 
+					<a href="#three">Equipment</a> |
+					<a href="/project.html">Project</a> |
+					<a href="#footer">Student</a>
+				</nav>
+				<a href="index.html" class="logo">RaspberryPi</a>
+				<!-- for future use 
+				<nav class="right">
+					<a href="#" class="button alt">Log in</a>
+				</nav> -->
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="content">
+					<h1>Project "MrFox"</h1>
+					<p>an IoT project to detect the presence of a fox (or a dog) in the garden using a Raspberry Pi 3B+, a PIR sensor and a Pi noir camera. </br> Once the PIR sensor will detect movement, a photo will be taken and will be published on the project's page.</br> A read of the Image will be carried by TensorFlow (Coco SSD model) and an email notification will be sent via Mailtrap SMTP server</br>
+					    a SenseHat will also send Temperature, Humidity and Pressure to ThingSpeak and data are visible on the project's page</p>
+					    	
+					<ul class="actions">
+						<li><a href="/project.html" class="button scrolly">Project's page</a></li>
+					</ul>
+					<img src="public/images/overall.jpg" alt="Project details" />
+				</div>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper">
+				<div class="inner flex flex-3">
+					<div class="flex-item left">
+						<div>
+							<h3>RaspberryPi3+</h3>
+							<p>Connected to the home WiFi router using 802.11n protocol.</p>
+						</div>
+						<div>
+							<h3>SenseHat</h3>
+							<p>The SenseHat is connected on GPIO 40 pins (on a mini black hat hack3r) and will be activated by a Python script who will send the data to ThingSpeak<br /> . The same data are published on a website and can be use via API to get the current values of temperature, humidity and pressure</p>
+						</div>
+					</div>
+					<div class="flex-item image fit round">
+						<img src="public/images/pic01.jpg" alt="" />
+					</div>
+					<div class="flex-item right">
+						<div>
+							<h3>PIR sensor</h3>
+							<p>.The PIR sensor – model Parallax Inc 555-28027 (connected to the mini black hat hack3r via female to female jumper wires:<br /> GND (blue wire to GND), VCC (orange wire to 5V+) and OUT (green wire to Pin 4) will detect movement (output 1) or will be off (output 0)</p>
+						</div>
+						<div>
+							<h3>Pi Noir Camera</h3>
+							<p>The Pi Noir Camera, designed to work also in low light conditions, gets triggered only when the PIR sensor detects movement<br />
+The images are stored to Firebase Database 
+</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper style1 special">
+				<div class="inner">
+					<h2>Technologies</h2>
+					<figure>
+					    <blockquote>
+					        "Every individual matters. Every individual has a role to play. Every individual makes a difference."
+					    </blockquote>
+					    <footer>
+					        <cite class="author">Dr.Jane Goodall</cite>
+					        <cite class="company">Primatologist</cite>
+					    </footer>
+					</figure>
+				</div>
+			</section>
+
+		<!-- Three -->
+	<center><h2>Main technologies and tools used for the project</h2></center>
+			<section id="three" class="wrapper">
+				<div class="inner flex flex-3">
+					<div class="flex-item box">
+						<div class="image fit">
+							<img src="public/images/firebase.png" alt="" />
+						</div>
+						<div class="content">
+							<h3>Firebase</h3>
+							<p>The Firebase Realtime Database is a cloud-hosted database.Data is stored as JSON and synchronized in realtime to every connected client.</p>
+						</div>
+					</div>
+					<div class="flex-item box">
+						<div class="image fit">
+							<img src="public/images/logo_Thingspeak.jpg" alt="" />
+						</div>
+						<div class="content">
+							<h3>ThingSpeak</h3>
+							<p>ThingSpeak is the open IoT platform with MATLAB analytics. In this project used to read and write data from SenseHat</p>
+						</div>
+					</div>
+					<div class="flex-item box">
+						<div class="image fit">
+							<img src="public/images/tensorflow.png" alt="" />
+						</div>
+						<div class="content">
+							<h3>TensorFlow</h3>
+							<p>TensorFlow is a free and open-source software library for machine learning.For this project used Coco SSD model</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="wrapper">
+				<div class="inner flex flex-3">
+					<div class="flex-item box">
+						<div class="image fit">
+							<img src="public/images/nodered.png" alt="" />
+						</div>
+						<div class="content">
+							<h3>node-red</h3>
+							<p>TNode-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.Used in this project to test Tensorflow and alternatives</p>
+						</div>
+					</div>
+					<div class="flex-item box">
+						<div class="image fit">
+							<img src="public/images/mailtrap.png" alt="" />
+						</div>
+						<div class="content">
+							<h3>Mailtrap</h3>
+							<p>Mailtrap is a fake SMTP server for development teams to test, view and share emails sent from the development and staging environments without spamming</p>
+						</div>
+					</div>
+					<div class="flex-item box">
+						<div class="image fit">
+							<img src="public/images/python.jpg" alt="" />
+						</div>
+						<div class="content">
+							<h3>Python</h3>
+							<p>In this project the main coding language use for all all the function is Python, while for the website basic HTML, CSS and some JavaScript</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<h2>Federica Fiorenza</h2>
+					<ul class="actions">
+						<li><span class="icon fa-phone"></span> <a href="#"></a>Studend Id: 20091413</li>
+						<li><span class="icon fa-envelope"></span> <a href="#">20091413@wit.ie</a></li>
+						<li><span class="icon fa-map-marker"></span>Assignment One - Networks</li>
+					</ul>
+				</div>
+
+			</footer>
+	</body>
+</html>

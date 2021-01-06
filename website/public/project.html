@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <title>Mr Fox</title>
+
+    <!-- import the webpage's stylesheet -->
+		<link rel="stylesheet" href="public/assets/css/main.css" />
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" ></script>
+    <Script src="/meteo.js"></script>
+
+  </head>
+  <body>
+      <center>
+    <h1>Raspberry Pi MrFox Cam</h1>
+    
+    
+    <!-- Three -->
+		<table class="center" style="width:400px" border="1">	
+		<tbody class="center"><td><h3>Temperature</h3></td><td><h3>Humidity</h3></td><td><h3>Pressure</h3></td>
+		</tbody>
+		<tbody><td><iframe width="400" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1263705/widgets/250371"></iframe></td>
+		<td><iframe width="400" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1263705/widgets/254818"></iframe></td>
+		<td><iframe width="400" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1263705/widgets/254819"></iframe></td>
+		</tbody>
+
+
+</table>
+				
+    <h2> Met Eireann API - Live from Dublin station </h2>
+    <a href="https://prodapi.metweb.ie/weather/short/Dublin">Met Eirann API</a>
+      <!-- Here a loader is created which  
+             loads till response comes -->
+    <div class="d-flex justify-content-center"> 
+            <div class="spinner-border" 
+                 role="status" id="loading"> 
+                <span class="sr-only">Loading...</span> 
+            </div> 
+        </div> 
+        <!-- table for showing data -->
+        <table id="meteo"></table> 
+        
+
+
+    <p>
+      Photo taken with a Pi Camera at <span id="time"></span>: <br>
+      <img id="photo" />
+    </p>
+
+
+
+</center>
+
+  </body>
+</html>
