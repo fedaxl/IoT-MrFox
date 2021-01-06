@@ -11,21 +11,26 @@ Ideally, if any Fox gets detected on camera, the subscriber will receive an emai
 
 ## Tools, Technologies and Equipment
 
-Raspberry PI 3B+ 
-Waterproof RPI Case
-PIR movement sensor
-PI Noir camera
-SenseHat
-PowerBank for power supply
-Firebase DB
-TensorFlow for image recognition
-Website built in HTML,CSS,JS
-Programming languages: Python, JavaScript, HTML, CSS, JSON with REST API) 
-node-RED
-Mailtrap
-ThingSpeak
-Met Eireann API
-000webhost provider (to host the website)
+* Raspberry PI 3B+ 
+* Waterproof RPI Case
+* PIR sensor module (Parallax Inc 555-28027)
+* female-to-female jumper wires x 3
+* PI Noir camera
+* Mini Black Hat Hack3r (assembled) + ribbon
+* SenseHat
+* PowerBank for power supply (outdoor)
+* Power Supply for Raspberry Pi 3 5.1V 2.5A 
+
+* Firebase DB
+* TensorFlow for image recognition
+* node-red
+* Mailtrap
+* ThingSpeak
+* Met Eireann API
+
+* Website built in HTML,CSS,JS
+* Programming languages: Python, JavaScript, HTML, CSS, node.js, JSON) 
+* 000webhost provider (to host the website)
 
 ## Project Repository
 https://github.com/fedaxl/IoT-MrFox.git
