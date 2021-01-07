@@ -1,0 +1,351 @@
+[
+    {
+        "id": "73355d7.e7f93a4",
+        "type": "tab",
+        "label": "PIR + Camera + Tensorflow",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "abbe69c1.a7a628",
+        "type": "inject",
+        "z": "73355d7.e7f93a4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 320,
+        "wires": [
+            [
+                "71d39dbb.4c1be4"
+            ]
+        ]
+    },
+    {
+        "id": "71d39dbb.4c1be4",
+        "type": "camerapi-takephoto",
+        "z": "73355d7.e7f93a4",
+        "filemode": "1",
+        "filename": "frame1.jpg",
+        "filedefpath": "1",
+        "filepath": "",
+        "fileformat": "jpeg",
+        "resolution": "2",
+        "rotation": "0",
+        "fliph": "0",
+        "flipv": "0",
+        "brightness": "50",
+        "contrast": "0",
+        "sharpness": "0",
+        "quality": "80",
+        "imageeffect": "none",
+        "exposuremode": "auto",
+        "iso": "0",
+        "agcwait": "1.0",
+        "led": "0",
+        "awb": "auto",
+        "name": "",
+        "x": 300,
+        "y": 300,
+        "wires": [
+            [
+                "d8931d1c.079e9",
+                "7d77d1c9.3e573",
+                "10ea244c.14a00c"
+            ]
+        ]
+    },
+    {
+        "id": "d8931d1c.079e9",
+        "type": "image",
+        "z": "73355d7.e7f93a4",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 560,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "1801f084.4947af",
+        "type": "function",
+        "z": "73355d7.e7f93a4",
+        "name": "isObjectDetected",
+        "func": "let dogDetected = false;\n\nfor (let object of msg.payload) {\n    if (object.class === 'dog') {\n        dogDetected = true;\n        break;\n    }\n}\nmsg.payload = dogDetected;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 810,
+        "y": 280,
+        "wires": [
+            [
+                "754777fd.9f7f18"
+            ]
+        ]
+    },
+    {
+        "id": "82b78812.4739d8",
+        "type": "rpi-gpio in",
+        "z": "73355d7.e7f93a4",
+        "name": "Pir Motion Sensor",
+        "pin": "7",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "761c68ae.c9d338"
+            ]
+        ]
+    },
+    {
+        "id": "761c68ae.c9d338",
+        "type": "switch",
+        "z": "73355d7.e7f93a4",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 210,
+        "y": 200,
+        "wires": [
+            [
+                "71d39dbb.4c1be4"
+            ]
+        ]
+    },
+    {
+        "id": "754777fd.9f7f18",
+        "type": "switch",
+        "z": "73355d7.e7f93a4",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 990,
+        "y": 340,
+        "wires": [
+            [
+                "615b2c6a.17a5c4",
+                "2ddc0646.ecba6a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e249c672.affa18",
+        "type": "debug",
+        "z": "73355d7.e7f93a4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "7d77d1c9.3e573",
+        "type": "switch",
+        "z": "73355d7.e7f93a4",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 370,
+        "y": 420,
+        "wires": [
+            [
+                "6a14d6dc.2fbe38"
+            ]
+        ]
+    },
+    {
+        "id": "10ea244c.14a00c",
+        "type": "cocossd",
+        "z": "73355d7.e7f93a4",
+        "name": "",
+        "x": 550,
+        "y": 200,
+        "wires": [
+            [
+                "1801f084.4947af",
+                "4962c5af.dd542c"
+            ]
+        ]
+    },
+    {
+        "id": "4962c5af.dd542c",
+        "type": "debug",
+        "z": "73355d7.e7f93a4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "6a14d6dc.2fbe38",
+        "type": "firebase out",
+        "z": "73355d7.e7f93a4",
+        "name": "",
+        "ref": "filetf",
+        "operation": "push",
+        "admin": "434caaec.23f584",
+        "x": 510,
+        "y": 560,
+        "wires": [
+            [
+                "e249c672.affa18"
+            ]
+        ]
+    },
+    {
+        "id": "615b2c6a.17a5c4",
+        "type": "exec",
+        "z": "73355d7.e7f93a4",
+        "command": "aplay",
+        "addpay": false,
+        "append": "/home/pi/mrfox/audio/open-the-door.wav",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "Play Audio File",
+        "x": 1180,
+        "y": 300,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "16b754db.91734b",
+        "type": "comment",
+        "z": "73355d7.e7f93a4",
+        "name": "Trigger camera if motion sensor is activated",
+        "info": "",
+        "x": 210,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "7709f79f.67c838",
+        "type": "comment",
+        "z": "73355d7.e7f93a4",
+        "name": "Load file into Firebase Realtime DB",
+        "info": "",
+        "x": 620,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "c1125cd8.15a23",
+        "type": "comment",
+        "z": "73355d7.e7f93a4",
+        "name": "Tensorflow (coco ssd) will analyze the image",
+        "info": "",
+        "x": 850,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6aff43bd.10473c",
+        "type": "comment",
+        "z": "73355d7.e7f93a4",
+        "name": " and if a Dog is detected \"open the door\" audio will play",
+        "info": "",
+        "x": 1100,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "79f2e0a7.a2c4d",
+        "type": "rpi-sensehat out",
+        "z": "73355d7.e7f93a4",
+        "name": "",
+        "x": 1270,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "2ddc0646.ecba6a",
+        "type": "python3-function",
+        "z": "73355d7.e7f93a4",
+        "name": "",
+        "func": "sense = SenseHat()\ncolor = (0, 0, 0)\nsense.show_message(\"Dog at the door\")",
+        "outputs": 1,
+        "x": 1130,
+        "y": 220,
+        "wires": [
+            [
+                "79f2e0a7.a2c4d"
+            ]
+        ]
+    },
+    {
+        "id": "434caaec.23f584",
+        "type": "firebase admin",
+        "name": "FirebaseRTDB"
+    }
+]
