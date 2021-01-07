@@ -32,12 +32,16 @@ Ideally, if any Fox gets detected on camera, the subscriber will receive an emai
 * Programming languages: Python, JavaScript, HTML, CSS, node.js, JSON) 
 * 000webhost provider (to host the website)
 
+![](https://i.ibb.co/SJStpR2/overall.png)
+
 ## Project Repository
 https://github.com/fedaxl/IoT-MrFox.git
 
 ## Project Website
 Click on Project to view the Demo page
 https://mrfox26445.000webhostapp.com/
+
+![](https://i.ibb.co/vQ4hchp/website.png)
 
 ## Development - Phase 1 TensorFlow
 In the first phase of this project I was able to recreate and complete the following feature in the project: have ThingsSpeak read data from the SenseHat, detect motion with the PIR sensor, take a photo with the pi noir camera and store it to Firebase (RealTime Database and Database Storage) and get all the subscriber notfied by email (from SMTP server Mailtrap) when this is happening.
