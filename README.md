@@ -60,12 +60,14 @@ The following commands are provided to work with the service:
 * node-red-log - this displays the log output of the service
 
 <dl>
- <dt>http:/hostnamehere:1880</dt>
+ <dt>http://hostnamehere:1880</dt>
  <dd>node-red console will run locally on port 1880</dd>
 </dl>
 
 From the node-red console it's then possible to create a flow and add different module, in my case I've been using the following command to install TensorFlow Coco SSD model:
 * TensorFlow[https://flows.nodered.org/node/node-red-contrib-tensorflow]:  npm install node-red-contrib-tensorflow  
+
+For additional guidance, check: https://github.com/kazuhitoyokoi/node-red-contrib-tensorflow
 
 ## Considerations
 If I had to start this project again, I'd probably consider to integrate the project from the beginning with node-red. 
