@@ -43,6 +43,8 @@ https://mrfox26445.000webhostapp.com/
 In the first phase of this project I was able to recreate and complete the following feature in the project: have ThingsSpeak read data from the SenseHat, detect motion with the PIR sensor, take a photo with the pi noir camera and store it to Firebase (RealTime Database and Database Storage) and get all the subscriber notfied by email (from SMTP server Mailtrap) when this is happening.
 Due to several attempts to install Tensorflow correctly in the Pi and after successfully complete this part, due to an increasing of memory error when attempting to use Tensorflow (Coco SSD model was saved locally in the Pi), the need to look for alternative was real. 
 
+![](https://i.ibb.co/KKGXsrb/project.png)
+
 ## Development - Phase 2 Node-Red
 In order to use Tensorflow to recognize images, I diverted to node-red [https://nodered.org/docs/getting-started/raspberrypi]. 
 
