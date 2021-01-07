@@ -60,7 +60,7 @@ The following commands are provided to work with the service:
 * node-red-log - this displays the log output of the service
 
 <dl>
- <dt>http://<hostname>:1880</dt>
+ <dt>http:/hostnamehere:1880</dt>
  <dd>node-red console will run locally on port 1880</dd>
 </dl>
 
