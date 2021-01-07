@@ -81,6 +81,6 @@ For additional guidance, check: https://github.com/kazuhitoyokoi/node-red-contri
 If I had to start this project again, I'd probably consider to integrate the project from the beginning with node-red. 
 There are couple of modules, such Firebase Storage, that in console are throwing several errors but I believe once integrating with SDK it should be easier.
 I was able to test Firebase in Node-Red console installing a module for Realtime Database, although the plugin contained a bug (JSON credentials project id did not match the format of the database name)
-With TensorFlow I was able to test correctly image recognitions, although I did not run a test with a real fox (as the model was not trained for that), I was able to complete all test correctly when showing a picture of a dog or other projects.
+With TensorFlow I was able to test correctly image recognitions, although I did not run a test with a real fox (as the model was not trained for that), I was able to complete all test correctly when showing a picture of a dog or other objects.
 
 
