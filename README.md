@@ -69,7 +69,7 @@ From the node-red console it's then possible to create a flow and add different 
 
 For additional guidance, check: https://github.com/kazuhitoyokoi/node-red-contrib-tensorflow
 
-![alt text](https://i.ibb.co/sb2vsRW/node-red.png)
+![](https://i.ibb.co/sb2vsRW/node-red.png)
 
 ## Considerations
 If I had to start this project again, I'd probably consider to integrate the project from the beginning with node-red. 
